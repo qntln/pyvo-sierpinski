@@ -1,3 +1,37 @@
+# Quantlane's clone of reveal.js
+
+## Starting a talk
+
+Run `./create-new-talk-repo.sh talk-name` to start a new GitHub repo with a talk template.
+The script copies this template to the `gh-pages` branch.
+
+
+## Converting talks to PDF
+
+TO DO: test https://github.com/astefanutti/decktape
+
+
+## Updating our reveal.js theme
+
+1. Edit `css/theme/source/quantlane.scss`.
+2. `npm install`
+3. `grunt css-themes`
+
+
+## Updating reveal.js
+
+1. `git remote add upstream https://github.com/hakimel/reveal.js.git`
+2. `git checkout master`
+3. `git pull upstream`
+4. `git checkout quantlane`
+5. `git merge --no-ff master`
+
+
+
+***
+
+
+
 # reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js) <a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
 
 A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
