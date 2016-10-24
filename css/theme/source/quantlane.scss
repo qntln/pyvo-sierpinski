@@ -63,17 +63,52 @@ section.has-dark-background a .email-name {
 
 .intro-slide {
 	.logo {
-		max-width: 400px;
-		margin-bottom: 50px;
+		max-width: 340px;
+		margin: 20px 0 70px;
 	}
-	h4 {
+	// Talk title
+	h1 {
+		font-size: 1.8em;
+	}
+	// Name | Event
+	h2 {
+		font-size: .8em;
 		font-weight: normal;
+		margin: 30px 0;
+	}
+	.divider {
+		color: $linkColor;
+	}
+	// Date
+	h3 {
+		color: #fff;
+		font-size: .7em;
+		span {
+			display: inline-block;
+			padding: 4px 80px;
+			background: url(../../img/date-bg.svg) 50% 50% no-repeat;
+			background-size: 100% 100%;
+		}
 	}
 }
 
 .thankyou-slide {
 	.logo {
-		max-width: 300px;
-		margin-bottom: 70px;
+		background: none;
+		max-width: 250px;
+		margin-bottom: 90px;
+	}
+	// Thank you
+	h1 {
+		font-size: 1em;
+		margin-bottom: 50px;
+	}
+	// email, twitter
+	h2 {
+		font-size: .7em;
+		font-weight: normal;
+	}
+	.twitter-link {
+		color: #fff;
 	}
 }

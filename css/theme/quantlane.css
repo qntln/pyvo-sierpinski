@@ -296,12 +296,41 @@ section.has-dark-background a .email-name {
   color: #fff; }
 
 .intro-slide .logo {
-  max-width: 400px;
-  margin-bottom: 50px; }
+  max-width: 340px;
+  margin: 20px 0 70px; }
 
-.intro-slide h4 {
-  font-weight: normal; }
+.intro-slide h1 {
+  font-size: 1.8em; }
+
+.intro-slide h2 {
+  font-size: .8em;
+  font-weight: normal;
+  margin: 30px 0; }
+
+.intro-slide .divider {
+  color: #f66103; }
+
+.intro-slide h3 {
+  color: #fff;
+  font-size: .7em; }
+  .intro-slide h3 span {
+    display: inline-block;
+    padding: 4px 80px;
+    background: url(../../img/date-bg.svg) 50% 50% no-repeat;
+    background-size: 100% 100%; }
 
 .thankyou-slide .logo {
-  max-width: 300px;
-  margin-bottom: 70px; }
+  background: none;
+  max-width: 250px;
+  margin-bottom: 90px; }
+
+.thankyou-slide h1 {
+  font-size: 1em;
+  margin-bottom: 50px; }
+
+.thankyou-slide h2 {
+  font-size: .7em;
+  font-weight: normal; }
+
+.thankyou-slide .twitter-link {
+  color: #fff; }
