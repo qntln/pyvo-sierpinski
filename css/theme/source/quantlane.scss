@@ -46,8 +46,8 @@ section.has-dark-background {
 }
 
 .borderless { // Remove the ugly default border and shadow around images.
-	border: none;
-	box-shadow: none;
+	border: none !important;
+	box-shadow: none !important;
 }
 
 .reveal .slides {
@@ -89,6 +89,14 @@ section.has-dark-background a .email-name {
 			background: url(../../img/date-bg.svg) 50% 50% no-repeat;
 			background-size: 100% 100%;
 		}
+	}
+}
+
+.logo-heading {
+	text-align: left;
+	img {
+		@extend .borderless;
+		width: 50%;
 	}
 }
 

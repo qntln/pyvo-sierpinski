@@ -284,9 +284,9 @@ body {
 .current-fragment {
   color: #cc5002; }
 
-.borderless {
-  border: none;
-  box-shadow: none; }
+.borderless, .logo-heading img {
+  border: none !important;
+  box-shadow: none !important; }
 
 .reveal .slides .logo {
   border: 0;
@@ -318,6 +318,11 @@ section.has-dark-background a .email-name {
     padding: 4px 80px;
     background: url(../../img/date-bg.svg) 50% 50% no-repeat;
     background-size: 100% 100%; }
+
+.logo-heading {
+  text-align: left; }
+  .logo-heading img {
+    width: 50%; }
 
 .thankyou-slide .logo {
   background: none;
