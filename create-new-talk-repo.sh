@@ -48,8 +48,8 @@ if [ "$PUBLIC" = "public" ]; then
 	git checkout -b gh-pages
 	echo "---> Talk will be available at https://qntln.github.io/$NAME/"
 else
-	# ID 17 == meta
-	gitlab project create --namespace-id 17 --name "$NAME"
+	# ID 67 == meta/talks
+	gitlab project create --namespace-id 67 --name "$NAME"
 	git remote add origin "ssh://git@gitlab.int.quantlane.com:2132/meta/$NAME.git"
 	echo "---> Talk will be available at https://gitlab.int.quantlane.com/meta/$NAME"
 fi
