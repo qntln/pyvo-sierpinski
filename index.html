@@ -25,61 +25,75 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="intro-slide">
-					<img class="logo" src="img/logo-positive.svg" alt="Quantlane">
-					<h1>Talk title</h1>
-					<h2>Name Surname <span class="divider">|</span> Event name</h2>
-					<h3><span>Month XX, 201X</span></h3>
+					<img class="logo" src="img/logo-positive-symbol.svg" alt="Quantlane">
+					<h1>Drawing &nbsp;&nbsp;&ldquo;<img src="sierpinski-small-inv.png" class="borderless" style="vertical-align: middle; width: 2em" />&rdquo;&nbsp;&nbsp; in Python</h1>
+					<h2>Vita Smid</h2>
+					<h3><span>Pyvo #103</span></h3>
+				</section>
+
+
+				<section data-background-color="#000000">
+					<img src="sierpinski-high.png" class="borderless" style="width: 70%" alt="">
 				</section>
 
 
 				<section>
-					<h2>Speaker's personal intro</h2>
-					<ul>
-						<li class="fragment">Stuff</li>
-						<li class="fragment">Stuff</li>
-						<li class="fragment">Stuff</li>
-					</ul>
+					<ol>
+						<li>Pick three vertices</li>
+						<li class="fragment">Randomly choose a point <code>p</code> from one of the vertices</li>
+						<li class="fragment">Randomly pick one of the vertices and move <code>p</code> halfway between <code>p</code> and the random vertex</li>
+						<li class="fragment">Colour <code>p</code> in</li>
+						<li class="fragment"><code>GOTO 3</code></li>
+					</ol>
 				</section>
 
 
 				<section>
-					<h2 class="logo-heading"><img src="img/logo-positive-horizontal.svg" alt="Quantlane"></h2>
-					<ul>
-						<li class="fragment">Small focused team</li>
-						<li class="fragment">We develop a trading platform and strategies</li>
-						<li class="fragment">All back-end code is Python 3.7</li>
-						<li class="fragment">We also like numpy, React, Redis, RabbitMQ, PostgreSQL, &hellip;</li>
-					</ul>
-				</section>
-
-
-				<section>
-					<h2>Title</h2>
-					<ul>
-						<li class="fragment">Stuff</li>
-						<li class="fragment">Stuff</li>
-						<li class="fragment">Stuff</li>
-					</ul>
-				</section>
-
-
-				<section>
-					<h2>Code</h2>
 					<pre><code class="python" data-trim data-noescape>
-	<mark>print</mark>('Hello world')
+import random
+import imageio
+import numpy as np
+
+
+max_x = 1000
+max_y = int((max_x**2 - (max_x / 2)**2)**0.5)
+a = np.zeros((max_y, max_x), dtype=np.uint8)
+
+vertices = ( # [y, x] coordinates
+    np.array([0, max_x // 2]),
+    np.array([max_y - 1, 0]),
+    np.array([max_y - 1, max_x - 1]),
+)
+					</code></pre>
+					<pre class="fragment"><code class="python" data-trim data-noescape>
+p = random.choice(vertices)
+for _ in range(<mark>A_LOT</mark>):
+    p = (p + random.choice(vertices)) // 2
+    a[tuple(p)] = 255
+					</code></pre>
+					<pre class="fragment"><code class="python" data-trim data-noescape>
+imageio.imwrite('sierpinski.png', a)
 					</code></pre>
 				</section>
 
 
+				<section data-background-color="#000000">
+					<img src="sierpinski-low.png" class="borderless" style="width: 70%" alt="">
+				</section>
+				<section data-background-color="#000000">
+					<img src="sierpinski-mid.png" class="borderless" style="width: 70%" alt="">
+				</section>
+				<section data-background-color="#000000">
+					<img src="sierpinski-high.png" class="borderless" style="width: 70%" alt="">
+				</section>
+
+
 				<section class="thankyou-slide" data-background-color="#000000">
-					<img class="logo" src="img/logo-negative.svg" alt="Quantlane">
+					<img class="logo" src="sierpinski-high.png" alt="Quantlane">
 					<br>
 					<h1>Thank you</h1>
 					<h2>
-						<a href="mailto:XXX@quantlane.com"><span class="email-name">name@</span>quantlane.com</a>
-					</h2>
-					<h2>
-						<a href="https://twitter.com/quantlane" class="twitter-link">twitter.com/quantlane</a>
+						<a href="mailto:vita@quantlane.com"><span class="email-name">vita@</span>quantlane.com</a>
 					</h2>
 				</section>
 			</div>
@@ -92,7 +106,7 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
+				transition: 'fade',
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
